@@ -1,0 +1,31 @@
+<tool id="get.image" name="Image Selector" version="0.0.1">
+  <description>
+      Simple image selector
+  </description>
+  <command>
+      bash $__tool_directory__/select_image.sh $image_id $output
+  </command>
+  <inputs>
+    <param label="Select Image" name="image_id" type="select">
+      <options from_file="imagedb.loc">
+        <column name="name" index="0" />
+        <column name="value" index="1" />
+      </options>
+    </param>
+  </inputs>
+  <outputs>
+    <data format="json" label="Selected Image (MMIF)" name="output">
+    </data>
+  </outputs>
+  <help>
+    <![CDATA[
+
+    **What it does**
+
+    This tool is to select an image or a collection of images from a local archival storage to feed to computational analysis pipelines for metadata extraction.
+
+    **License**
+
+    ]]>
+  </help>
+</tool>

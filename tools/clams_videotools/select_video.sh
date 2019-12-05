@@ -1,1 +1,0 @@
-echo "{ \"context\": \"mmif-prototype-0.0.1.jsonld\", \"metadata\": {}, \"media\": [ { \"id\": \"0\", \"type\": \"audio-video\", \"location\": \"$1\", \"metadata\": {} } ], \"contains\": [], \"views\": [] }" > $2

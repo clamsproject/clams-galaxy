@@ -14,15 +14,15 @@
     </param>
   </inputs>
   <outputs>
-    <data format="txt" label="Selected Video (MMIF)" name="output">
+    <data format="json" label="Selected Video (MMIF)" name="output">
     </data>
   </outputs>
   <help>
     <![CDATA[
 
-    **What it does**  
+    **What it does**
 
-    This tool is to select a video or a collection of video from a local archival storage to feed to computational analysis pipelines for metadata extraction. 
+    This tool is to select a video or a collection of video from a local archival storage to feed to computational analysis pipelines for metadata extraction.
 
     **License**
 

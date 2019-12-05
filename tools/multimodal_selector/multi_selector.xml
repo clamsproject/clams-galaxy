@@ -1,0 +1,37 @@
+<tool id="get.multi" name="Multimodal Selector" version="0.0.1">
+  <description>
+      Simple selector for transcript and video files.
+  </description>
+  <command>
+      bash $__tool_directory__/select_multi.sh $video_id $transcript_id $output
+  </command>
+  <inputs>
+      <param label="Select Video" name="video_id" type="select">
+      <options from_file="videodb.loc">
+        <column name="name" index="0" />
+        <column name="value" index="1" />
+      </options>
+    </param>
+    <param label="Select Transcript" name="transcript_id" type="select">
+      <options from_file="textdb.loc">
+        <column name="name" index="0" />
+        <column name="value" index="1" />
+      </options>
+    </param>
+  </inputs>
+  <outputs>
+    <data format="json" label="Selected V+T (MMIF)" name="output">
+    </data>
+  </outputs>
+  <help>
+    <![CDATA[
+
+    **What it does**
+
+    This tool is to select a transcript and video from a collection of transcripts and videos from a local archival storage to feed to computational analysis pipelines for metadata extraction.
+
+    **License**
+
+    ]]>
+  </help>
+</tool>
