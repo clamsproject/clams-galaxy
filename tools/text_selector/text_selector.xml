@@ -1,4 +1,4 @@
-<tool id="get.transcript" name="Transcript Selector" version="0.0.1">
+<tool id="get.text" name="Text Selector" version="0.0.1">
   <description>
       Simple text selector
   </description>
@@ -6,7 +6,7 @@
       bash $__tool_directory__/select_text.sh $text_id $output
   </command>
   <inputs>
-    <param label="Select Transcript" name="transcript_id" type="select">
+    <param label="Select Text File" name="text_id" type="select">
       <options from_file="textdb.loc">
         <column name="name" index="0" />
         <column name="value" index="1" />
