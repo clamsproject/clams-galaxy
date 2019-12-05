@@ -7,11 +7,12 @@
     <tool file="multimodal_selector.xml" />
     <tool file="image_selector.xml" />
   </section>
+  <section id="Video" name="Video Tools">
   </section>
-  <section id="video" name="Video Tools">
+  <section id="Audio" name="Audio Tools">
   </section>
-  <section id="audio" name="Audio Tools">
+  <section id="Text" name="Text Tools">
   </section>
-  <section id="text" name="Text Tools">
+  <section id="Alignment" name="Alignment Tools">
   </section>
 </toolbox>
