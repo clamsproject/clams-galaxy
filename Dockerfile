@@ -1,4 +1,4 @@
-FROM bgruening/galaxy-stable:19.01
+FROM bgruening/galaxy-stable:19.05
 
 WORKDIR /galaxy-central
 
