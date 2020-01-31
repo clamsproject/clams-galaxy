@@ -3,7 +3,7 @@
       Simple selector for transcript and video files.
   </description>
   <command>
-      bash $__tool_directory__/select_multi.sh $video_id $transcript_id $output
+      bash $__tool_directory__/select_multi.sh $video_id $transcript_id '$output'
   </command>
   <inputs>
       <param label="Select Video" name="video_id" type="select">
