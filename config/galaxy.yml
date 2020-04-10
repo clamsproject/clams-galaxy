@@ -21,7 +21,7 @@ uwsgi:
   # The address and port on which to listen.  By default, only listen to
   # localhost (galaxy will not be accessible over the network).  Use
   # ':8080' to listen on all available network interfaces.
-  http: :5000
+  http: 0.0.0.0:5000
 
   # By default uWSGI allocates a very small buffer (4096 bytes) for the
   # headers of each request. If you start receiving "invalid request
@@ -707,13 +707,13 @@ galaxy:
 
   # The URL of the page to display in Galaxy's middle pane when loaded.
   # This can be an absolute or relative URL.
-  #welcome_url: /static/welcome.html
+  welcome_url: /static/welcome.html
 
   # The URL linked by the "Galaxy/brand" text.
-  #logo_url: /
+  logo_url: "https://clams.ai/img/clams-logo.png"
 
   # The URL linked by the "Galaxy Help" link in the "Help" menu.
-  #helpsite_url: ''
+  helpsite_url: 'https://clams.ai/'
 
   # The URL linked by the "Wiki" link in the "Help" menu.
   #wiki_url: 'https://galaxyproject.org/'
@@ -1263,7 +1263,7 @@ galaxy:
   # Admin section of the server, and will have access to create users,
   # groups, roles, libraries, and more.  For more information, see:
   # https://galaxyproject.org/admin/
-  #admin_users: ''
+  admin_users: 'admin@clams.ai'
 
   # Force everyone to log in (disable anonymous access).
   #require_login: false
