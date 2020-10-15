@@ -1,5 +1,6 @@
-FROM bgruening/galaxy-stable:19.05
+FROM bgruening/galaxy-stable:20.05
 
+RUN apt-get update || apt-get install -y vim-nox
 WORKDIR /galaxy-central
 
 COPY config config/
