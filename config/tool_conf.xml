@@ -2,10 +2,7 @@
 <toolbox monitor="true">
   <section id="getext" name="Get Data">
     <tool file="data_source/upload.xml" />
-    <tool file="video_selector/video_selector.xml" />
-    <tool file="text_selector/text_selector.xml" />
-    <tool file="multimodal_selector/multimodal_selector.xml" />
-    <tool file="image_selector/image_selector.xml" />
+    <tool file="mmif_sourcer/doc_selector.xml" />
   </section>
   <section id="Video" name="Video Tools">
   </section>
