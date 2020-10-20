@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <toolbox monitor="true">
   <section id="getext" name="Get Data">
-    <tool file="data_source/upload.xml" />
     <tool file="mmif_sourcer/doc_selector.xml" />
+  </section>
+  <section id="Image" name="Image Tools">
   </section>
   <section id="Video" name="Video Tools">
   </section>
