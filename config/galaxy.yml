@@ -710,7 +710,8 @@ galaxy:
   welcome_url: /static/welcome.html
 
   # The URL linked by the "Galaxy/brand" text.
-  logo_url: "https://clams.ai/img/clams-logo.png"
+  logo_url: "https://clams.ai/"
+  logo_src: "https://clams.ai/assets/img/clams-logo.png"
 
   # The URL linked by the "Galaxy Help" link in the "Help" menu.
   helpsite_url: 'https://clams.ai/'

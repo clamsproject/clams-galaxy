@@ -1,0 +1,71 @@
+<tool id="get.source" name="Source Documents Selector" version="0.0.1">
+  <description>
+      Simple documents selector
+  </description>
+  <command>
+      \$GALAXY_CONDA_PREFIX/bin/clams source \
+      #for $d in $documents
+        ${d.document_type.type}:${d.document_type.docid} \
+      #end for
+      > $output
+  </command>
+  <inputs>
+      <repeat name="documents" title="Documents">
+      <conditional name="document_type">
+          <param label="Select Document Type" name="type" type="select">
+              <option value="text" selected="true">TextDocument</option>
+              <option value="image">ImageDocument</option>
+              <option value="audio">AudioDocument</option>
+              <option value="video">VideoDocument</option>
+          </param>
+          <when value="video">
+              <param label="Select a Document" name="docid" type="select">
+                  <options from_file="videodb.loc">
+                      <column name="name" index="0" />
+                      <column name="value" index="1" />
+                  </options>
+              </param>
+          </when>
+          <when value="audio">
+              <param label="Select a Document" name="docid" type="select">
+                  <options from_file="audiodb.loc">
+                      <column name="name" index="0" />
+                      <column name="value" index="1" />
+                  </options>
+              </param>
+          </when>
+          <when value="image">
+              <param label="Select a Document" name="docid" type="select">
+                  <options from_file="imagedb.loc">
+                      <column name="name" index="0" />
+                      <column name="value" index="1" />
+                  </options>
+              </param>
+          </when>
+          <when value="text">
+              <param label="Select a Document" name="docid" type="select">
+                  <options from_file="textdb.loc">
+                      <column name="name" index="0" />
+                      <column name="value" index="1" />
+                  </options>
+              </param>
+          </when>
+      </conditional>
+      </repeat>
+  </inputs>
+  <outputs>
+    <data format="json" label="MMIF Source" name="output">
+    </data>
+  </outputs>
+  <help>
+    <![CDATA[
+
+    **What it does**
+
+    This tool is to select a video or a collection of video from a local archival storage to feed to computational analysis pipelines for metadata extraction.
+
+    **License**
+
+    ]]>
+  </help>
+</tool>

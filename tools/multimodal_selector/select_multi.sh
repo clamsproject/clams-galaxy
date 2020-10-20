@@ -1,1 +1,0 @@
-echo "{ \"@context\": \"mmif-prototype-0.0.1.jsonld\", \"metadata\": {}, \"media\": [ { \"id\": \"0\", \"type\": \"https://vocab.clams.ai/mtype/audio-video\", \"location\": \"$1\", \"metadata\": {} }, { \"id\": \"1\", \"type\": \"https://vocab.clams.ai/mtype/text\", \"location\": \"$2\", \"metadata\": {} } ], \"contains\": {}, \"views\": [] }" > $3
