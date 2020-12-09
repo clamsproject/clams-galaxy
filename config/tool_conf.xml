@@ -2,6 +2,7 @@
 <toolbox monitor="true">
   <section id="getext" name="Get Data">
     <tool file="mmif_sourcer/doc_selector.xml" />
+    <tool file="mmif_sourcer/doc_collector.xml" />
   </section>
   <section id="Image" name="Image Apps">
   </section>
