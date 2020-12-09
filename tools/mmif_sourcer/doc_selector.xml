@@ -1,6 +1,6 @@
 <tool id="get.source" name="Source Document Selector" version="0.0.1">
   <description>
-      Simple document selector
+      Generates a single MMIF source file from selected documents
   </description>
   <command>
       \$GALAXY_CONDA_PREFIX/bin/clams source \
@@ -61,8 +61,8 @@
     <![CDATA[
 
     **What it does**
-
-    This tool is to select a video or a collection of video from a local archival storage to feed to computational analysis pipelines for metadata extraction.
+    
+    This Galaxy tool generates a single MMIF source file with selected raw soruce files. All selected archival files will be added as primary documents in the resulting MMIF file. 
 
     **License**
 

@@ -1,6 +1,6 @@
 <tool id="get.source_col" name="Source Documents Collector" version="0.0.1">
   <description>
-      Simple documents Collector
+      Generates a collection of MMIF source files from collected documents
   </description>
   <command interpreter="/export/tool_deps/_conda/bin/python">
       doc_collector.py "outputs" \
@@ -64,7 +64,7 @@
 
     **What it does**
 
-    This tool is to Collect a video or a collection of video from a local archival storage to feed to computational analysis pipelines for metadata extraction.
+    This Galaxy tool generates a data collection of MMIF source files with selected raw source files. Each MMIF source file will add one archival file from each document type, if more than one document types are selected, assuming that those files are corresponding to each other (e.g. a video file and its transcript file). When the numbers of documents in each type are different (e.g. when 3 videos and 4 texts are selected), this tool will produce an error. 
 
     **License**
 
