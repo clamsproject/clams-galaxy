@@ -2,15 +2,16 @@
 <toolbox monitor="true">
   <section id="getext" name="Get Data">
     <tool file="mmif_sourcer/doc_selector.xml" />
+    <tool file="mmif_sourcer/doc_collector.xml" />
   </section>
-  <section id="Image" name="Image Tools">
+  <section id="Image" name="Image Apps">
   </section>
-  <section id="Video" name="Video Tools">
+  <section id="Video" name="Video Apps">
   </section>
-  <section id="Audio" name="Audio Tools">
+  <section id="Audio" name="Audio Apps">
   </section>
-  <section id="Text" name="Text Tools">
+  <section id="Text" name="Text Apps">
   </section>
-  <section id="Alignment" name="Alignment Tools">
+  <section id="Alignment" name="Alignment Apps">
   </section>
 </toolbox>

@@ -1,25 +1,26 @@
-<tool id="get.source" name="Source Document Selector" version="0.0.1">
+<tool id="get.source_col" name="Source Documents Collector" version="0.0.1">
   <description>
-      Generates a single MMIF source file from selected documents
+      Generates a collection of MMIF source files from collected documents
   </description>
-  <command>
-      \$GALAXY_CONDA_PREFIX/bin/clams source \
+  <command interpreter="/export/tool_deps/_conda/bin/python">
+      doc_collector.py "outputs" \
       #for $d in $documents
-        ${d.document_type.type}:${d.document_type.docid} \
+        #for $docid in $d.document_type.docids
+          ${d.document_type.type}:${docid} \
+        #end for
       #end for
-      > $output
   </command>
   <inputs>
       <repeat name="documents" title="Documents">
       <conditional name="document_type">
-          <param label="Select Document Type" name="type" type="select">
-              <option value="text" selected="true">TextDocument</option>
+          <param label="Collect Document Type" name="type" type="select">
+              <option value="text" Collected="true">TextDocument</option>
               <option value="image">ImageDocument</option>
               <option value="audio">AudioDocument</option>
               <option value="video">VideoDocument</option>
           </param>
           <when value="video">
-              <param label="Select a Document" name="docid" type="select">
+              <param label="Collect a Document" name="docids" type="select" multiple="true">
                   <options from_file="videodb.loc">
                       <column name="name" index="0" />
                       <column name="value" index="1" />
@@ -27,7 +28,7 @@
               </param>
           </when>
           <when value="audio">
-              <param label="Select a Document" name="docid" type="select">
+              <param label="Collect a Document" name="docids" type="select" multiple="true">
                   <options from_file="audiodb.loc">
                       <column name="name" index="0" />
                       <column name="value" index="1" />
@@ -35,7 +36,7 @@
               </param>
           </when>
           <when value="image">
-              <param label="Select a Document" name="docid" type="select">
+              <param label="Collect a Document" name="docids" type="select" multiple="true">
                   <options from_file="imagedb.loc">
                       <column name="name" index="0" />
                       <column name="value" index="1" />
@@ -43,7 +44,7 @@
               </param>
           </when>
           <when value="text">
-              <param label="Select a Document" name="docid" type="select">
+              <param label="Collect a Document" name="docids" type="select" multiple="true">
                   <options from_file="textdb.loc">
                       <column name="name" index="0" />
                       <column name="value" index="1" />
@@ -54,15 +55,16 @@
       </repeat>
   </inputs>
   <outputs>
-    <data format="json" label="MMIF Source" name="output">
-    </data>
+    <collection type="list" label="MMIF Sources" name="outputs">
+        <discover_datasets pattern="__designation_and_ext__" directory="outputs" ext="json"/>
+    </collection>
   </outputs>
   <help>
     <![CDATA[
 
     **What it does**
-    
-    This Galaxy tool generates a single MMIF source file with selected raw soruce files. All selected archival files will be added as primary documents in the resulting MMIF file. 
+
+    This Galaxy tool generates a data collection of MMIF source files with selected raw source files. Each MMIF source file will add one archival file from each document type, if more than one document types are selected, assuming that those files are corresponding to each other (e.g. a video file and its transcript file). When the numbers of documents in each type are different (e.g. when 3 videos and 4 texts are selected), this tool will produce an error. 
 
     **License**
 

@@ -1,5 +1,7 @@
 FROM bgruening/galaxy-stable:20.05
 
+# https://github.com/yarnpkg/yarn/issues/7866
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN apt-get update && apt-get install -y vim-nox
 WORKDIR /galaxy-central
 
